@@ -68,3 +68,10 @@ export class CaptchaService {
   }
 }
 
+export const getSymbol = () => {
+
+ const count=() => {
+    return 1;
+  }
+}
+

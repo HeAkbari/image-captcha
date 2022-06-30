@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { createcaptchaObject } from './Captch.tools';
 import { CaptchaService } from './captcha.service';
 
 //declare function createCaptcha(): any;
@@ -10,14 +11,14 @@ import { CaptchaService } from './captcha.service';
 })
 
 export class AppComponent implements OnInit {
-  constructor(private captcha: CaptchaService) {
+  constructor() {
 
   }
   ngOnInit(): void {
     this.createCaptcha()
   }
   createCaptcha() {
-    const captcha: any = this.captcha.createcaptchaObject(
+    const captcha: any = createcaptchaObject(
       '35px Arial',
       'center',
       'middle',
