@@ -22,10 +22,10 @@ export class AppComponent implements OnInit {
       '35px Arial',
       'center',
       'middle',
-      300,
-      150,
+      200,
+      50,
       'transparent',
-      '#B885',
+      '#A729',
       6
     )
     var body = document.getElementById("main");

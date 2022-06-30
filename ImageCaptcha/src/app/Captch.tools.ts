@@ -32,9 +32,19 @@ export const createcaptchaObject = (font: string, align: CanvasTextAlign, baseli
     context.textAlign = align;
     context.textBaseline = baseline;
     context.fillStyle = bgColor;
-    context.fillRect(0, 0, width, height);
-    context.fillStyle = color;
-    context.fillText(newWord, width / 2, height / 2);
+
+    var background = new Image();
+    background.src = "https://s6.uupload.ir/files/r_dmte.jpg";
+    
+    // Make sure the image is loaded first otherwise nothing will draw.
+    background.onload = function(){
+        context.drawImage(background,0,0);   
+        context.fillRect(0, 0, width, height);
+        context.fillStyle = color;
+        context.fillText(newWord, width / 2, height / 2);
+    }
+
+
     return { canvas: context.canvas, word: newWord };
 
     newImage.setAttribute('src', context.canvas.toDataURL());
